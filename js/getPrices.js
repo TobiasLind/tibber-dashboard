@@ -9,7 +9,7 @@ function removeData(chart) {
 }
 
 async function drawPriceDiagram() {
-	  		const powergridfee = [62.5,11.0];
+	  		const powergridfee = [70.0,12.0];
 	  		
 	  		let data = {
 	  			query: "{\n  viewer {\n    homes {\n      currentSubscription{\n        priceInfo{\n          current{\n            total\n            energy\n            tax\n            startsAt\n          }\n          today {\n            total\n            energy\n            tax\n            startsAt\n          }\n          tomorrow {\n            total\n            energy\n            tax\n            startsAt\n          }\n        }\n      }\n    }\n  }\n}\n"
