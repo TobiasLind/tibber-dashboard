@@ -1,0 +1,41 @@
+<html>
+<style>
+.chart-wrapper {
+  border: 0px solid blue;
+  height: 400px;
+  width: 1000px;
+}
+body {
+background-color: #EDEDED;
+font-family: Sans-serif;
+}
+
+</style>
+
+<head>
+	<link rel="icon" href="https://play-lh.googleusercontent.com/Ib9Zi3qG9P0GgIKFJpyFV2lyIi0wVNbC4n4JhBUjTTklAHmuoizQb3BJ7DwWib4JF6I=s180-rw">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="./js/getPrices.js"></script>
+	<script src="./js/getConsumption.js"></script>
+	<title>Tobbes Tibber</title>
+</head>
+
+<body onload="drawPriceDiagram();drawConsumptionDiagram(3);">
+	<center><h1 id="title"> </h1>
+	<script>
+		const date = new Date();
+		document.getElementById("title").innerHTML = "Electricity prices " +date.getFullYear()+"-"+String(date.getMonth()+1).padStart(2, '0') +"-"+String(date.getDate()).padStart(2, '0');
+		var myConsumtionChart;
+	</script>
+	<button onclick="drawPriceDiagram()">Show spot price inc network charge</button><button onclick="removeData(priceChart)">Remove spot price without network charge</button>
+	<div class="chart-wrapper"><canvas id="price-chart" width="100" height="40"></canvas></div>
+	<br>
+	<p id="whenToStartWaterHeater"></p>
+	<p id="whenToStartAirCondition"></p>
+	<br><br>
+	<button onclick="drawConsumptionDiagram(1)">1 day</button><button onclick="drawConsumptionDiagram(3)">3 days</button><button onclick="drawConsumptionDiagram(7)">7 days</button><button onclick="drawConsumptionDiagram(14)">14 days</button><button onclick="drawConsumptionDiagram(30)">30 days</button>
+	<div class="chart-wrapper"><canvas id="consumption-chart" width="100" height="50"></canvas></div>
+	</center>
+</body>
+
+</html>
