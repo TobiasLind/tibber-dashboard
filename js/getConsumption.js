@@ -66,7 +66,7 @@ async function drawConsumptionDiagram(numberOfDays) {
 					datasets: [
 
 						{
-							label: "kWh price inc. network charge",
+							label: "kWh price inc. power grid fee",
 							type: 'line',
 							backgroundColor: ["#FF0000"],
 							stepped: true,

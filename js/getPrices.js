@@ -1,4 +1,5 @@
 var tibberToken = "xxxxxxxx"; //Add your Tibber access token here
+var powergridfee = [70.0,12.0];
 var priceChart;
 var today;
 
@@ -9,7 +10,7 @@ function removeData(chart) {
 }
 
 async function drawPriceDiagram() {
-	  		const powergridfee = [70.0,12.0];
+
 	  		
 	  		let data = {
 	  			query: "{\n  viewer {\n    homes {\n      currentSubscription{\n        priceInfo{\n          current{\n            total\n            energy\n            tax\n            startsAt\n          }\n          today {\n            total\n            energy\n            tax\n            startsAt\n          }\n          tomorrow {\n            total\n            energy\n            tax\n            startsAt\n          }\n        }\n      }\n    }\n  }\n}\n"
@@ -112,7 +113,7 @@ async function drawPriceDiagram() {
 					datasets: [
 
 						{
-							label: "Today's prices inc. network charge",
+							label: "Today's prices inc. power grid fee",
 							backgroundColor: ["#ffffff"],
 							stepped: true,
 							borderColor: "#3e95cd",
@@ -120,7 +121,7 @@ async function drawPriceDiagram() {
 							data: todayIncGridFee
 						},	
 						{
-							label: "Tomorrow's prices inc. network charge",
+							label: "Tomorrow's prices inc. power grid fee",
 							backgroundColor: ["#ffffff"],
 							stepped: true,
 							borderColor: "#FF0000",
