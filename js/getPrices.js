@@ -1,4 +1,4 @@
-var tibberToken = "xxxxxxxx"; //Add your Tibber access token here
+var tibberToken = "5K4MVS-OjfWhK_4yrjOlFe1F6kJXPVf7eQYggo8ebAE"; //DEMO Token, add your Tibber access token here
 var powergridfee = [70.0,12.0];
 var priceChart;
 var today;
